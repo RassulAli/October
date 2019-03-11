@@ -1,0 +1,4 @@
+title: GenresController
+modelClass: Rasul\Movies\Models\Genre
+toolbar:
+    buttons: reorder_toolbar

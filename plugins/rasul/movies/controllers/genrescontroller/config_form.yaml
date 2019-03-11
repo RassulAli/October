@@ -1,0 +1,10 @@
+name: GenresController
+form: $/rasul/movies/models/genre/fields.yaml
+modelClass: Rasul\Movies\Models\Genre
+defaultRedirect: rasul/movies/genrescontroller
+create:
+    redirect: 'rasul/movies/genrescontroller/update/:id'
+    redirectClose: rasul/movies/genrescontroller
+update:
+    redirect: rasul/movies/genrescontroller
+    redirectClose: rasul/movies/genrescontroller

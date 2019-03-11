@@ -1,0 +1,10 @@
+name: ActorsController
+form: $/rasul/movies/models/actor/fields.yaml
+modelClass: Rasul\Movies\Models\Actor
+defaultRedirect: rasul/movies/actorscontroller
+create:
+    redirect: 'rasul/movies/actorscontroller/update/:id'
+    redirectClose: rasul/movies/actorscontroller
+update:
+    redirect: rasul/movies/actorscontroller
+    redirectClose: rasul/movies/actorscontroller

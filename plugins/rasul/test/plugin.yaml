@@ -1,0 +1,16 @@
+plugin:
+    name: 'rasul.test::lang.plugin.name'
+    description: 'rasul.test::lang.plugin.description'
+    author: RAsul
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Test
+        url: rasul/test/companycontroller
+        icon: icon-angle-double-right
+        sideMenu:
+            side-menu-item:
+                label: Company
+                url: rasul/test/companycontroller
+                icon: icon-sitemap

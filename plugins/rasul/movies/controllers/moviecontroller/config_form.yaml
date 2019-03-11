@@ -1,0 +1,10 @@
+name: MovieController
+form: $/rasul/movies/models/movie/fields.yaml
+modelClass: Rasul\Movies\Models\Movie
+defaultRedirect: rasul/movies/moviecontroller
+create:
+    redirect: 'rasul/movies/moviecontroller/update/:id'
+    redirectClose: rasul/movies/moviecontroller
+update:
+    redirect: rasul/movies/moviecontroller
+    redirectClose: rasul/movies/moviecontroller

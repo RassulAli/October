@@ -1,0 +1,10 @@
+name: CompanyController
+form: $/rasul/test/models/company/fields.yaml
+modelClass: Rasul\Test\Models\Company
+defaultRedirect: rasul/test/companycontroller
+create:
+    redirect: 'rasul/test/companycontroller/update/:id'
+    redirectClose: rasul/test/companycontroller
+update:
+    redirect: rasul/test/companycontroller
+    redirectClose: rasul/test/companycontroller

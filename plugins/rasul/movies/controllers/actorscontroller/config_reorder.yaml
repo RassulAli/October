@@ -1,0 +1,4 @@
+title: ActorsController
+modelClass: Rasul\Movies\Models\Actor
+toolbar:
+    buttons: reorder_toolbar

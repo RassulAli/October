@@ -1,0 +1,4 @@
+title: CompanyController
+modelClass: Rasul\Test\Models\Company
+toolbar:
+    buttons: reorder_toolbar

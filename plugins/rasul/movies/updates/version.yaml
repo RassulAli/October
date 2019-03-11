@@ -1,0 +1,56 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table rasul_movies_'
+    - builder_table_create_rasul_movies_.php
+1.0.3:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies_.php
+1.0.4:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies__2.php
+1.0.5:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies__3.php
+1.0.6:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies__4.php
+1.0.7:
+    - 'Created table rasul_movies_genres'
+    - builder_table_create_rasul_movies_genres.php
+1.0.8:
+    - 'Updated table rasul_movies_genres'
+    - builder_table_update_rasul_movies_genres.php
+1.0.9:
+    - 'Updated table rasul_movies_genres'
+    - builder_table_update_rasul_movies_genres_2.php
+1.0.10:
+    - 'Updated table rasul_movies_genres'
+    - builder_table_update_rasul_movies_genres_3.php
+1.0.11:
+    - 'Updated table rasul_movies_genres'
+    - builder_table_update_rasul_movies_genres_4.php
+1.0.12:
+    - 'Created table rasul_movies_movies_genres'
+    - builder_table_create_rasul_movies_movies_genres.php
+1.0.13:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies__5.php
+1.0.14:
+    - 'Created table rasul_movies_actors'
+    - builder_table_create_rasul_movies_actors.php
+1.0.15:
+    - 'Updated table rasul_movies_actors'
+    - builder_table_update_rasul_movies_actors.php
+1.0.16:
+    - 'Updated table rasul_movies_actors'
+    - builder_table_update_rasul_movies_actors_2.php
+1.0.17:
+    - 'Updated table rasul_movies_actors'
+    - builder_table_update_rasul_movies_actors_3.php
+1.0.18:
+    - 'Updated table rasul_movies_'
+    - builder_table_update_rasul_movies__6.php
+1.0.19:
+    - 'Created table rasul_movies_actors_movies'
+    - builder_table_create_rasul_movies_actors_movies.php

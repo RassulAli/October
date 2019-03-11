@@ -1,0 +1,24 @@
+plugin:
+    name: 'rasul.movies::lang.plugin.name'
+    description: 'rasul.movies::lang.plugin.description'
+    author: RAsul
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: rasul/movies/moviecontroller
+        icon: icon-video-camera
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: rasul/movies/genrescontroller
+                icon: icon-tag
+            side-menu-item2:
+                label: Actors
+                url: rasul/movies/actorscontroller
+                icon: icon-user
+    main-menu-item2:
+        label: 'Menu Item'
+        url: /
+        icon: icon-life-ring

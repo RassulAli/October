@@ -1,0 +1,28 @@
+title = "Genres"
+url = "/genres/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails builderDetails2]
+modelClass = "Rasul\Movies\Models\Genre"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "genre_title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails2.record %}
+{% set displayColumn = builderDetails2.displayColumn %}
+{% set notFoundMessage = builderDetails2.notFoundMessage %}
+
+{% if record %}
+    <h2>{{ attribute(record, displayColumn) }}</h2>
+
+    {% for movie in record.movies %}<br>
+
+        {{movie.name}}
+
+    {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
