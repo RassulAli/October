@@ -114,4 +114,6 @@ return [
         'name' => 'Catch all email'
     ],
 
+    'pretend' => false
+
 ];
