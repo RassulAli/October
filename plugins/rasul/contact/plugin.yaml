@@ -1,0 +1,6 @@
+plugin:
+    name: 'rasul.contact::lang.plugin.name'
+    description: 'rasul.contact::lang.plugin.description'
+    author: RAsul
+    icon: oc-icon-send
+    homepage: ''
