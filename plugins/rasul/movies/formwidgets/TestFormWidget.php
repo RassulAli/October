@@ -37,7 +37,7 @@ class TestFormWidget extends FormWidgetBase
     public function render()
     {
         $this->prepareVars();
-        //dump($this->vars['actors']);
+//        dump($this->vars['selectedValues']);
         return $this->makePartial('testformwidget');
     }
 
@@ -51,7 +51,16 @@ class TestFormWidget extends FormWidgetBase
         $this->vars['actors'] = Actor::all()->lists('full_name','id');
 
         $this->vars['name'] = $this->formField->getName().'[]';
+
+        if(!empty($this->getLoadValue())){
+            $this->vars['selectedValues'] = $this->getLoadValue();
+        }else{
+            $this->vars['selectedValues'] =[];
+        }
+
+
     }
+
 
     /**
      * @inheritDoc
@@ -65,8 +74,21 @@ class TestFormWidget extends FormWidgetBase
     /**
      * @inheritDoc
      */
-    public function getSaveValue($value)
-    {
-        return $value;
+    public function getSaveValue($actors){
+        $newArray = [];
+        foreach($actors as $actorID){
+            if(!is_numeric($actorID)){
+                $newActor = new Actor;
+                $nameLastname = explode(' ', $actorID);
+
+                $newActor->name = $nameLastname[0];
+                $newActor->lastname = $nameLastname[1];
+                $newActor->save();
+                $newArray[] = $newActor->id;
+            } else {
+                $newArray[] = $actorID;
+            }
+        }
+        return $newArray;
     }
 }

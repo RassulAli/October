@@ -6,6 +6,10 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+        return[
+            'Rasul\Movies\Components\ActorsComponent' => 'actors'
+        ];
+
     }
 
 

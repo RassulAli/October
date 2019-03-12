@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.mailgun.org',
+    'host' => 'smtp.gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => null,
+    'username' => 'rasul.aliyev94@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => null,
+    'password' => 'azerbaycan18',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,5 +108,10 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+
+    'to' => [
+      'address' => 'rasul.aliyev94@gmail.com',
+        'name' => 'Catch all email'
+    ],
 
 ];
