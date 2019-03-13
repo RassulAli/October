@@ -3,6 +3,8 @@
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactFormComponent extends ComponentBase
 {
@@ -16,14 +18,32 @@ class ContactFormComponent extends ComponentBase
 
     public function onSend(){
 
-        $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'content' => Input::get('content')];
+        $validator = Validator::make(
+            [
+                'name' => Input::get('name'),
+                'email' => Input::get('email')
+            ],
+            [
+                'name' => 'required|min:5',
+                'email' => 'required|email'
+            ]
+        );
 
-        Mail::send('rasul.contact::mail.message', $vars, function($message) {
+        if ($validator->fails()){
+            return Redirect::back()->withErrors($validator);
+        }else{
+            $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'content' => Input::get('content')];
 
-            $message->to('admin@domain.tld', 'Admin Person');
-            $message->subject('You have a new message');
+            Mail::send('rasul.contact::mail.message', $vars, function($message) {
 
-        });
+                $message->to('admin@domain.tld', 'Admin Person');
+                $message->subject('You have a new message');
+
+            });
+        }
+
+
+
 
     }
 
