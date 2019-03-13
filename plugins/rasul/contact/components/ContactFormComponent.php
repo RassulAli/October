@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Redirect;
 
 class ContactFormComponent extends ComponentBase
@@ -24,13 +25,20 @@ class ContactFormComponent extends ComponentBase
                 'email' => Input::get('email')
             ],
             [
-                'name' => 'required|min:5',
+                'name' => 'required',
                 'email' => 'required|email'
             ]
         );
 
-        if ($validator->fails()){
-            return Redirect::back()->withErrors($validator);
+        if($validator->fails())
+        {
+
+            return ['#result' => $this->renderPartial('contactform::messages',[
+                'errorMsgs' => $validator->messages()->all(),
+                'fieldMsgs' => $validator->messages()
+            ])];
+
+
         }else{
             $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'content' => Input::get('content')];
 

@@ -7,7 +7,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Rasul\Contact\Components\ContactFormComponent' => 'contactform',
+            'Rasul\Contact\Components\ContactFormComponent' => 'contactform'
         ];
     }
 

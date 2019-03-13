@@ -1,0 +1,19 @@
+title = "Add contact"
+url = "/add-contact"
+layout = "default"
+is_hidden = 0
+
+[actorform]
+
+[session]
+security = "all"
+==
+<h2>Add an Actor</h2>
+
+
+{% if user %}
+    {% component 'actorform' %}
+{% else %}
+    Sorry, you have to be logged in.
+{% endif %}
+
