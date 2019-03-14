@@ -1,5 +1,5 @@
 {% for message in errorMsgs %}
-    <div>{{ message }}</div>
+    <div class="text-danger">{{ message }}</div>
 {% endfor %}
 
 <script type="text/javascript">
@@ -10,6 +10,6 @@
     console.log(errors);
 
     $.each(errors, function(name, msg){
-        $('<div class="error-msg">' + msg + '</div>').insertAfter($('input[name=' + name + ']'));
+        $('<div class="error-msg text-danger">' + msg + '</div>').insertAfter($('input[name=' + name + ']'));
     })
 </script>

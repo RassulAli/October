@@ -181,26 +181,16 @@ class Updates extends Controller
         $contents = [];
 
         try {
-            $updates = (array) Yaml::parseFile($path.'/'.$filename);
+            $updates = Yaml::parseFile($path.'/'.$filename);
+            $updates = is_array($updates) ? array_reverse($updates) : [];
 
             foreach ($updates as $version => $details) {
-                if (!is_array($details)) {
-                    $details = (array)$details;
-                }
-
-                //Filter out update scripts
-                $details = array_filter($details, function($string) use ($path) {
-                    return !preg_match('/^[a-z_\-0-9]*\.php$/i', $string) || !File::exists($path . '/updates/' . $string);
-                });
-
-                $contents[$version] = $details;
+                $contents[$version] = is_array($details)
+                    ? array_shift($details)
+                    : $details;
             }
         }
         catch (Exception $ex) {}
-
-        uksort($contents, function ($a, $b) {
-            return version_compare($b, $a);
-        });
 
         return $contents;
     }

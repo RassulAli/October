@@ -629,11 +629,6 @@ class ImportExportController extends ControllerBehavior
 
         $query = $widget->prepareQuery();
         $results = $query->get();
-        
-        if ($event = $widget->fireSystemEvent('backend.list.extendRecords', [&$results])) {
-            $results = $event;
-        }
-        
         foreach ($results as $result) {
             $record = [];
             foreach ($columns as $column) {

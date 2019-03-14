@@ -57,21 +57,17 @@ class ErrorHandler extends ErrorHandlerBase
             return null;
         }
 
-        if (class_exists(Theme::class) && in_array('Cms', Config::get('cms.loadModules', []))) {
-            $theme = Theme::getActiveTheme();
-            $router = new Router($theme);
+        $theme = Theme::getActiveTheme();
+        $router = new Router($theme);
 
-            // Use the default view if no "/error" URL is found.
-            if (!$router->findByUrl('/error')) {
-                return View::make('cms::error');
-            }
-
-            // Route to the CMS error page.
-            $controller = new CmsController($theme);
-            $result = $controller->run('/error');
-        } else {
-            $result = View::make('system::error');
+        // Use the default view if no "/error" URL is found.
+        if (!$router->findByUrl('/error')) {
+            return View::make('cms::error');
         }
+
+        // Route to the CMS error page.
+        $controller = new CmsController($theme);
+        $result = $controller->run('/error');
 
         // Extract content from response object
         if ($result instanceof \Symfony\Component\HttpFoundation\Response) {

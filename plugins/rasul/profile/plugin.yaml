@@ -1,0 +1,6 @@
+plugin:
+    name: 'rasul.profile::lang.plugin.name'
+    description: 'rasul.profile::lang.plugin.description'
+    author: RAsul
+    icon: oc-icon-user-secret
+    homepage: ''

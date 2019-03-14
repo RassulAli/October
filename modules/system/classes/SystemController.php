@@ -4,7 +4,6 @@ use Lang;
 use ApplicationException;
 use Illuminate\Routing\Controller as ControllerBase;
 use Exception;
-use Response;
 
 /**
  * The is the master controller for system related routing.
@@ -37,7 +36,7 @@ class SystemController extends ControllerBase
 
         }
         catch (Exception $ex) {
-            return Response::make('/* '.e($ex->getMessage()).' */', 500);
+            return '/* '.e($ex->getMessage()).' */';
         }
     }
 }

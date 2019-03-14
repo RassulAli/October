@@ -54,3 +54,6 @@
 1.0.19:
     - 'Created table rasul_movies_actors_movies'
     - builder_table_create_rasul_movies_actors_movies.php
+1.0.20:
+    - 'Seed movies'
+    - seed.php

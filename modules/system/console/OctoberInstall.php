@@ -71,27 +71,16 @@ class OctoberInstall extends Command
         $this->setupAdminUser();
         $this->setupCommonValues();
 
-        $chosenToInstall = [];
-
         if ($this->confirm('Configure advanced options?', false)) {
             $this->setupEncryptionKey();
             $this->setupAdvancedValues();
-            $chosenToInstall = $this->askToInstallPlugins();
+            $this->askToInstallPlugins();
         }
         else {
             $this->setupEncryptionKey(true);
         }
 
         $this->setupMigrateDatabase();
-
-        foreach ($chosenToInstall as $pluginCode) {
-            $this->output->writeln('<info>Installing plugin ' . $pluginCode . '</info>');
-            $this->callSilent('plugin:install', [
-                'name' => $pluginCode
-            ]);
-            $this->output->writeln('<info>' . $pluginCode . ' installed successfully.</info>');
-        }
-
         $this->displayOutro();
     }
 
@@ -131,14 +120,20 @@ class OctoberInstall extends Command
     }
 
     protected function askToInstallPlugins() {
-        $chosenToInstall = [];
         if ($this->confirm('Install the October.Drivers plugin?', false)) {
-            $chosenToInstall[] = 'October.Drivers';
+            $this->output->writeln('<info>Installing plugin October.Drivers</info>');
+            $this->callSilent('plugin:install', [
+                'name' => 'October.Drivers'
+            ]);
+            $this->output->writeln('<info>October.Drivers installed successfully.</info>');
         }
-        if ($this->confirm('Install the Rainlab.Builder plugin?', false)) {
-            $chosenToInstall[] = 'Rainlab.Builder';
+        if($this->confirm('Install the Rainlab.Builder plugin?', false)) {
+            $this->output->writeln('<info>Installing plugin Rainlab.Builder</info>');
+            $this->callSilent('plugin:install', [
+                'name' => 'Rainlab.Builder'
+            ]);
+            $this->output->writeln('<info>Rainlab.Builder installed successfully.</info>');
         }
-        return $chosenToInstall;
     }
 
     //

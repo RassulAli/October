@@ -2,14 +2,12 @@
 
 return [
     'auth' => [
-        'title' => 'Zone d’administration',
-        'invalid_login' => 'Les informations que vous avez entrées ne correspondent pas. Veuillez vérifier et essayez à nouveau.'
+        'title' => 'Zone d’administration'
     ],
     'field' => [
         'invalid_type' => 'Type de champ invalide :type.',
         'options_method_invalid_model' => "L’attribut ':field' ne correspond à aucun modèle valide. Essayez de spécifier explicitement la méthode d’options pour la classe du modèle ':model'.",
         'options_method_not_exists' => 'La classe du modèle :model doit définir une méthode :method() renvoyant des options pour le champ ":field" du formulaire.',
-        'colors_method_not_exists' => 'La classe du modèle :model doit définir une méthode :method() renvoyant des codes couleur html HEX pour le champ ":field" du formulaire.'
     ],
     'widget' => [
         'not_registered' => 'Aucun widget au nom de classe ":name" n’a été enregistré',
@@ -35,7 +33,6 @@ return [
         'not_found_name' => 'Le modèle partiel ":name" est introuvable.'
     ],
     'account' => [
-        'signed_in_as' => 'Connecté en tant que :full_name',
         'sign_out' => 'Déconnexion',
         'login' => 'OK',
         'reset' => 'Réinitialiser',
