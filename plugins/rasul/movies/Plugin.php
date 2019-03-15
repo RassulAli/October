@@ -56,7 +56,7 @@ class Plugin extends PluginBase
                     return [
                     'title'     => $item->name,
                     'text'      => $item->description,
-                    'url'       => '/movies/movie' . $item->slug,
+                    'url'       => '/movies/movie/' . $item->slug,
                     'thumb'     => $item->poster->first(),
                     'relevance' => $relevance,
                 ];
@@ -64,7 +64,7 @@ class Plugin extends PluginBase
                     return [
                         'title'     => $item->name,
                         'text'      => $item->description,
-                        'url'       => '/movies/movie' . $item->slug,
+                        'url'       => '/movies/movie/' . $item->slug,
                         'relevance' => $relevance,
                     ];
                 }

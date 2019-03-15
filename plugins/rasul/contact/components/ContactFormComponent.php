@@ -19,6 +19,8 @@ class ContactFormComponent extends ComponentBase
 
     public function onSend(){
 
+        //dd(request()->all());
+
         $validator = Validator::make(
             [
                 'name' => Input::get('name'),
